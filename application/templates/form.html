@@ -1,25 +1,30 @@
 {% extends "layout.html" %}
 {% block title %}Form{% endblock %}
 {% block content %}
-<div class="container">
-        <div class="row p-5">
-            <div class="col-1"></div>
-            <div class="col-10 border p-3">
-                <h1 class="text-center">Form</h1>
-                <h3 class="text-center">{{headline}} </h3>
-                <form action="api" method="post">
-                    <label for="year">Year:</label><br/>
-                    <input type="text" id="year" name="year"><br/>
-                    <label for="month">month:</label><br/>
-                    <input type="text" id="month" name="month"><br/>
-                    <label for="day">day:</label><br/>
-                    <input type="text" id="day" name="day"><br/>
-                    <label for="price_range">price range:</label><br/>
-                    <input type="text" id="price_range" name="price_range"><br/>
+<div class="container mx-auto">
+    <div class="row p-5">
+        <div class="col-1"></div>
+        <div class="col-10 border p-3">
+            <h1 class="text-center">Form</h1>
+            <h3 class="text-center">{{ headline }}</h3>
+            <form action="api" method="post">
+                <label for="year">Year:</label><br/>
+                <input type="text" id="year" name="year"><br/>
+                <label for="month">Month:</label><br/>
+                <input type="text" id="month" name="month"><br/>
+                <label for="day">Day:</label><br/>
+                <input type="text" id="day" name="day"><br/>
+                <label for="price_range">Price range/location:</label><br/>
+                <select id="price_range" name="price_range">
+                    <option value="SE1">Luleå / Northern Sweden</option>
+                    <option value="SE2">Sundsvall / Northern Central Sweden</option>
+                    <option value="SE3">Stockholm / Southern Central Sweden</option>
+                    <option value="SE4">Malmö / Southern Sweden</option>
+                </select><br/>
 
-                    <button type="submit" class="btn btn-primary mt-5">Submit</button>
-                    </form>
-            </div>
-            </div>
+                <button type="submit" class="btn btn-primary mt-5">Submit</button>
+            </form>
+        </div>
     </div>
+</div>
 {% endblock %}

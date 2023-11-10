@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electricity Prices</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background: linear-gradient(135deg, #001F3F, #63A3F9); padding: 20px;">
+    <div class="container" style="padding: 20px;">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center" style="color: #fff;">Electricity prices</h1>
+                <p class="text-center" style="color: #fff;">Here you can find out the energy prices throughout Sweden!</p>
+                <h2 style="color: #000000;">Time and Prices</h2>
+                <table class="table table-bordered table-striped" style="color: #000000;">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>SEK per kWh</th>
+                        </tr>
+                    </thead>
+                    <!-- Här skapar vi logiken för att gå igenom vår lista med en for loop och printa ut det -->
+                    <tbody>
+                        {% for time, price in data %}
+                            <tr>
+                                <td>{{ time }}</td>
+                                <td>{{ price }}kr</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
